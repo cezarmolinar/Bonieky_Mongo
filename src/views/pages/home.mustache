@@ -17,7 +17,7 @@
 
 <ul>
     {{#users}}
-        <li>{{name.firstName}} {{name.lastName}} - {{age}} anos</li>
+        <li>{{name.firstName}} {{name.lastName}} - {{age}} anos - <a href="/usuario/{{_id}}/addidade"> +1 ano</a> </li>
     {{/users}}
     {{^users}}
         Não há usuários cadastrados

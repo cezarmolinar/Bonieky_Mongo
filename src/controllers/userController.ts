@@ -21,6 +21,19 @@ export const addUserAction = async (req: Request, res: Response) => {
     res.redirect('/');
 };
 
+export const incrementAgeAction = async (req: Request, res: Response) => {
+    try {
+        let user = await User.findById(req.params.id);
+        user.age++;
+        await user.save();
+        console.log("Sucesso");
+    } catch (error) {
+        console.log("Erro: ", error);
+    }
+
+    res.redirect('/');
+};
+
 export const nome = (req: Request, res: Response) => {
     let nome: string = req.query.nome as string;
     let idade: string = req.query.idade as string;
